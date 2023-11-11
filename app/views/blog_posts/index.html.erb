@@ -9,3 +9,10 @@
     <h2><%= blog_post.content %></h2>
   </div>
 <% end %>
+
+<% if @pagy.count > @pagy.items %>
+  <div class="my-16">
+    <%== pagy_info(@pagy, item_name: "posts")%>
+    <%== pagy_nav(@pagy) %>
+  </div>
+<% end %>
