@@ -8,21 +8,16 @@
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "actiontext","data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
     <%= javascript_importmap_tags %>
   </head>
-
-  <body class="prose mx-auto">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <div>
-      <% if user_signed_in? %>
-        <%= link_to "New Blog Post", new_blog_post_path %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path %>
-      <% end %>
+  <body>
+    <%= render "layouts/header"%>
+    <%= alert %>
+    <%= notice %>
+    <div class="max-w-screen-md mx-auto">
+      <%= yield %>
     </div>
-    <%= yield %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
   </body>
 </html>
