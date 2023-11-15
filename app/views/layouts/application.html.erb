@@ -12,12 +12,10 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
-    <%= render "layouts/header"%>
+    <%= render "layouts/header" unless controller_name == 'sessions' %>
     <%= alert %>
     <%= notice %>
-    <div class="max-w-screen-md mx-auto">
-      <%= yield %>
-    </div>
+    <%= yield %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
   </body>
 </html>

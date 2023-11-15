@@ -1,45 +1,15 @@
+@import "components/form";
+@import "components/button";
+@import "components/pagination";
+
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
 
+body {
+  @apply h-screen bg-gray-50;
+}
 
-@layer components {
-  .logo {
-    @apply text-transparent text-3xl font-extrabold bg-clip-text bg-gradient-to-r to-neutral-600 from-neutral-950;
-  }
-  .btn-primary {
-    @apply text-white bg-neutral-950 hover:bg-neutral-800 focus:ring-4 focus:outline-none focus:ring-neutral-300 font-medium rounded-lg text-sm px-4 py-2 text-center;
-  }
-  .btn-link {
-    @apply text-sm text-neutral-950 hover:underline font-medium;
-  }
-
-  /* Pagination Component */
-  .pagy-nav.pagination {
-    @apply isolate inline-flex -space-x-px rounded-md shadow-sm;
-  }
-  
-  .page.next a {
-    @apply relative inline-flex items-center rounded-r-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
-  }
-  
-  .page.prev a {
-    @apply relative inline-flex items-center rounded-l-md border border-gray-300 bg-white px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
-  }
-  
-  .page.next.disabled {
-    @apply relative inline-flex items-center rounded-r-md border border-gray-300 bg-slate-100 px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
-  }
-  
-  .page.prev.disabled {
-    @apply relative inline-flex items-center rounded-l-md border border-gray-300 bg-slate-100 px-2 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 focus:z-20;
-  }
-  
-  .page a, .page.gap {
-    @apply bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center border px-4 py-2 text-sm font-medium focus:z-20;
-  }
-  
-  .page.active {
-    @apply z-10 border-indigo-500 bg-indigo-50 text-indigo-600 relative inline-flex items-center border px-4 py-2 text-sm font-medium focus:z-20;
-  }
+.logo {
+  @apply text-transparent text-3xl font-extrabold bg-clip-text bg-gradient-to-r to-primary-600 from-primary-950;
 }
