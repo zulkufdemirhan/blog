@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag "actiontext","data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= javascript_importmap_tags %>
   </head>
   <body>
@@ -16,6 +17,7 @@
     <%= alert %>
     <%= notice %>
     <%= yield %>
+    <%= turbo_frame_tag "modal" %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
   </body>
 </html>

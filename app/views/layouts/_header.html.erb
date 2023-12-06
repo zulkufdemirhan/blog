@@ -3,10 +3,10 @@
     <%= link_to "HUNS", root_path, class: "logo" %>
     <div class="flex items-center space-x-6 rtl:space-x-reverse">
       <% if user_signed_in? %>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn-link" %>
-        <%= link_to "New Blog Post", new_blog_post_path, class: "btn-primary" %>
+        <%= button_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-lg btn-outline" %>
+        <%= link_to "New Blog Post", new_blog_post_path, class: "btn btn-lg btn-primary", data: { turbo_frame: "modal" } %>
       <% else %>
-        <%= link_to "Login", new_user_session_path, class: "btn-primary" %>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-lg btn-primary" %>
       <% end %>
     </div>
   </div>

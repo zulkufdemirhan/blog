@@ -9,7 +9,6 @@
         </svg>
       </div>
     <% end %>
-
     <% if @blog_post.draft? %>
       <span class="inline-block bg-indigo-100 text-indigo-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded">Draft</span>
     <% elsif @blog_post.scheduled? %>
@@ -17,7 +16,12 @@
     <% end %>
     <h1 class="font-bold"><%= @blog_post.title %></h1>
     <h3 class="truncate-overflow line-clamp-3"><%= @blog_post.content %></h2>
-    <%= link_to "Back", root_path, class: "text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-4 py-2 inline-flex" if user_signed_in? %>
-    <%= link_to "Edit", edit_blog_post_path(@blog_post), class: "btn-primary inline-flex ml-0 md:ml-2" if user_signed_in? %>
+    <div class="flex justify-between">
+      <div class="flex">
+        <%= link_to "Edit", edit_blog_post_path(@blog_post), class: "btn btn-lg btn-primary me-4", data: { turbo_frame: "modal" } if user_signed_in? %>
+        <%= link_to "Back", root_path, class: "btn btn-lg btn-outline" if user_signed_in? %>
+      </div>
+      <%= link_to "Delete", blog_post_path(@blog_post), class: "btn btn-lg btn-destroy", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </div>
   </div>
 </section>
